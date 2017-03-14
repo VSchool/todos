@@ -67,6 +67,14 @@ angular.module("TodoApp.Auth", ["ngRoute", "ngStorage"])
     this.isAuthenticated = function() {
         return !!TokenService.getToken();
     };
+
+    this.updateUser = function(user) {
+        return $http.put("/api/profile/me", user).then(function (response) {
+            return response.data;
+        }, function (response) {
+            alert(response.data.message);
+        });
+    }
 }])
 
 // An HTTP interceptor runs on every outgoing and incoming HTTP request/response. There are 4 methods

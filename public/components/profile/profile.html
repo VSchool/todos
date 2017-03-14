@@ -1,0 +1,39 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <h1>{{ userService.currentUser.name }}</h1>
+        <img src="http://fillmurray.com/200/200" alt="Bill Murray" class="img-responsive">
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Change Name</h3>
+                <form>
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" ng-model="user.firstName" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" ng-model="user.lastName" class="form-control">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Change Password</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <input type="password" id="newPassword" class="form-control" ng-model="user.password">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPasswordRepeat">Repeat New Password</label>
+                        <input type="password" id="newPasswordRepeat" class="form-control" ng-model="newPasswordRepeat">
+                    </div>
+                    <button class="btn btn-primary" ng-click="updateUser(user)">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

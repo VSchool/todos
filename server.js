@@ -21,6 +21,7 @@ app.use("/api", expressJwt({secret: config.secret}));
 
 app.use("/auth", require("./routes/authRoutes"));
 app.use("/api/todos", require("./routes/todoRoutes"));
+app.use("/api/profile", require("./routes/profileRoutes"));
 
 app.listen(port, function () {
     console.log("Server running on port " + port);

@@ -5,23 +5,23 @@ var Todo = require("../models/todo");
 todoRouter.route("/")
     .get(function (req, res) {
 
-        /*
-        * Instead of finding EVERYTHING, we will instead filter the results to only return the todo items that belong
-        * to the currently logged-in user (req.user, which was provided by the express-jwt package).
-        * */
-        Todo.find({user: req.user._id}, function (err, todos) {
-            if (err) res.status(500).send(err);
-            res.send(todos);
-        });
-    })
+    /*
+     * Instead of finding EVERYTHING, we will instead filter the results to only return the todo items that belong
+     * to the currently logged-in user (req.user, which was provided by the express-jwt package).
+     * */
+    Todo.find({user: req.user._id}, function (err, todos) {
+        if (err) res.status(500).send(err);
+        res.send(todos);
+    });
+})
     .post(function (req, res) {
-        var todo = new Todo(req.body);
+                var todo = new Todo(req.body);
 
-        // We need to add the user property to every todo item before it gets saved to the DB
-        todo.user = req.user._id;
-        todo.save(function (err, newTodo) {
-            if (err) res.status(500).send(err);
-            res.status(201).send(newTodo);
+                // We need to add the user property to every todo item before it gets saved to the DB
+                todo.user = req.user._id;
+                todo.save(function (err, newTodo) {
+                    if (err) res.status(500).send(err);
+                    res.status(201).send(newTodo);
         });
     });
 

@@ -9,6 +9,10 @@ app.config(function ($routeProvider) {
             templateUrl: "components/todos/todos.html",
             controller: "TodoController"
         })
+        .when("/profile", {
+            templateUrl: "components/profile/profile.html",
+            controller: "ProfileController"
+        })
         .otherwise({
             redirectTo: "/"
         });

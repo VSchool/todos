@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <title>Todo App</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 
 <body>
 
-    <!--<div ng-include="'components/navbar/navbar.html'"></div>-->
     <navbar></navbar>
     <div class="container">
         <div ng-view></div>
     </div>
 
     <!-- Third-party -->
+    <script src="https://code.jquery.com/jquery-3.1.1.js"
+            integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
     <script src="http://code.angularjs.org/1.4.7/angular-route.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
@@ -24,6 +28,7 @@
     <script src="app.js"></script>
     <script src="components/todos/todos.js"></script>
     <script src="components/navbar/navbar.js"></script>
+    <script src="components/profile/profile.js"></script>
 
     <!-- Auth -->
     <script src="components/auth/auth.js"></script>

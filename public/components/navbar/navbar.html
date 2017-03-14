@@ -20,6 +20,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li ng-hide="userService.isAuthenticated()"><a href="#/login">Login</a></li>
                 <li ng-hide="userService.isAuthenticated()"><a href="#/signup">Signup</a></li>
+                <li ng-show="userService.isAuthenticated()"><a href="#/profile">Profile</a></li>
                 <li ng-show="userService.isAuthenticated()"><a href="#/logout">Logout</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->
